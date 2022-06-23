@@ -1,0 +1,39 @@
+{
+  "name": "nutribuddy",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "generate": "yarn strapi generate"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/plugin-documentation": "^4.1.11",
+    "@strapi/plugin-graphql": "^4.1.11",
+    "@strapi/plugin-i18n": "4.1.11",
+    "@strapi/plugin-sentry": "^4.1.11",
+    "@strapi/plugin-users-permissions": "4.1.11",
+    "@strapi/strapi": "4.1.11",
+    "pg": "8.6.0",
+    "strapi-plugin-entity-relationship-chart": "^4.1.0",
+    "strapi-plugin-io": "^1.1.1",
+    "strapi-plugin-rest-cache": "^4.2.4",
+    "strapi-plugin-vercel-deploy": "^1.0.1",
+    "strapi-provider-rest-cache-memory": "^4.2.4"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "1b015530-1b61-484b-8f75-35126f6d32df"
+  },
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

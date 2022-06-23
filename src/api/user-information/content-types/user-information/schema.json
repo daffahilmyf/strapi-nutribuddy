@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_informations",
+  "info": {
+    "singularName": "user-information",
+    "pluralName": "user-informations",
+    "displayName": "User_Information",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "height": {
+      "type": "integer",
+      "min": 0,
+      "required": true
+    },
+    "weight": {
+      "type": "float",
+      "min": 0,
+      "unique": false
+    },
+    "birthdate": {
+      "type": "date",
+      "unique": false,
+      "private": true,
+      "required": true
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "male",
+        "female"
+      ],
+      "required": true
+    },
+    "is_pregnant": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "user_information"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "vitamin_deficiencies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::vitamin.vitamin",
+      "inversedBy": "user_informations"
+    }
+  }
+}

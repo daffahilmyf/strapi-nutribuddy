@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vitamin_characteristics",
+  "info": {
+    "singularName": "vitamin-characteristic",
+    "pluralName": "vitamin-characteristics",
+    "displayName": "Vitamin_Characteristic",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "vitamin": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::vitamin.vitamin",
+      "inversedBy": "vitamin_characteristics"
+    }
+  }
+}

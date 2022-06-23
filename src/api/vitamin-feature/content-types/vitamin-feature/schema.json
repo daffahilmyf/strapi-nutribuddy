@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vitamin_features",
+  "info": {
+    "singularName": "vitamin-feature",
+    "pluralName": "vitamin-features",
+    "displayName": "Vitamin_Feature",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "characteristic": {
+      "type": "enumeration",
+      "enum": [
+        "positive",
+        "negative"
+      ]
+    },
+    "vitamin": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::vitamin.vitamin",
+      "inversedBy": "vitamin_features"
+    }
+  }
+}

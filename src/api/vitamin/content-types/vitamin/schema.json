@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vitamins",
+  "info": {
+    "singularName": "vitamin",
+    "pluralName": "vitamins",
+    "displayName": "Vitamin",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "vitamin_characteristics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vitamin-characteristic.vitamin-characteristic",
+      "mappedBy": "vitamin"
+    },
+    "vitamin_features": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vitamin-feature.vitamin-feature",
+      "mappedBy": "vitamin"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "user_informations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::user-information.user-information",
+      "inversedBy": "vitamin_deficiencies"
+    },
+    "food_specific_information": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::food-specific-information.food-specific-information",
+      "inversedBy": "vitamin"
+    }
+  }
+}
